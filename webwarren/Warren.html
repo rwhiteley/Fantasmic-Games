@@ -1,0 +1,2388 @@
+<!DOCTYPE html><html><head><title>Warren</title><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui=1"><meta charset="UTF-8"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="description" content=""><link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="icon64.png"><link rel="apple-touch-icon" sizes="180x180" href="icon180.png"><link rel="icon" type="image/png" sizes="32x32" href="icon32.png"><link rel="icon" type="image/png" sizes="16x16" href="icon16.png"><style>html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow:hidden;
+  font-family: Verdana;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#canvaswrapper {
+  text-align: center ;
+}
+</style><style>@font-face { font-family: "BitCell" ; src: url("fonts/BitCell.ttf") format("truetype"); }</style><style>@font-face { font-family: "PixAntiqua" ; src: url("fonts/PixAntiqua.ttf") format("truetype"); }</style><script>window.fonts = ["BitCell","PixAntiqua"]</script></head><body class="noselect custom-cursor" oncontextmenu="return false;"><div id="canvaswrapper"></div><script type="text/javascript">var resources = {"images":[{"file":"badger.png","version":45,"size":434,"properties":{"frames":1,"fps":5}},{"file":"berries.png","version":72,"size":358,"properties":{"frames":1,"fps":5}},{"file":"bunny.png","version":152,"size":858,"properties":{"frames":3,"fps":6}},{"file":"bunny1.png","version":20,"size":556,"properties":{"frames":1,"fps":5}},{"file":"bush.png","version":1,"size":656,"properties":{}},{"file":"carrot.png","version":73,"size":576,"properties":{"frames":1,"fps":5}},{"file":"covered_tunnel.png","version":163,"size":667,"properties":{"frames":1,"fps":5}},{"file":"flowers-blue_flower.png","version":4,"size":326,"properties":{"frames":1,"fps":5}},{"file":"flowers-flowers.png","version":73,"size":610,"properties":{"frames":1,"fps":5}},{"file":"flowers-pink_flower.png","version":3,"size":299,"properties":{"frames":1,"fps":5}},{"file":"flowers-red_flower.png","version":6,"size":311,"properties":{"frames":1,"fps":5}},{"file":"fox.png","version":458,"size":1647,"properties":{"frames":5,"fps":7}},{"file":"fox2.png","version":182,"size":1169,"properties":{"frames":2,"fps":5}},{"file":"grass1.png","version":11,"size":1348,"properties":{"frames":2,"fps":5}},{"file":"grassblades.png","version":44,"size":567,"properties":{"frames":4,"fps":2}},{"file":"hurt_bunny.png","version":30,"size":821,"properties":{"frames":3,"fps":5}},{"file":"icon.png","version":0,"size":0,"properties":{}},{"file":"land-grass_corner.png","version":7,"size":711,"properties":{"frames":1,"fps":5}},{"file":"land-grass_corner_brown.png","version":74,"size":732,"properties":{"frames":1,"fps":5}},{"file":"land-grass_side.png","version":12,"size":685,"properties":{"frames":1,"fps":5}},{"file":"land-grass_side_water.png","version":18,"size":764,"properties":{"frames":1,"fps":5}},{"file":"land-grass_stright_brown.png","version":21,"size":635,"properties":{"frames":1,"fps":5}},{"file":"land-grass_water_corner.png","version":18,"size":765,"properties":{"frames":1,"fps":5}},{"file":"land-grasssheet.png","version":10,"size":416,"properties":{"frames":1,"fps":5}},{"file":"land-other_corner.png","version":3,"size":272,"properties":{"frames":1,"fps":5}},{"file":"land-skysheet.png","version":22,"size":243,"properties":{"frames":1,"fps":5}},{"file":"land-sprite2.png","version":63,"size":307,"properties":{"frames":1,"fps":5}},{"file":"land-watersheet.png","version":7,"size":315,"properties":{"frames":1,"fps":5}},{"file":"navpoint.png","version":2,"size":189,"properties":{"frames":1,"fps":5}},{"file":"old_sprites-bush1.png","version":18,"size":677,"properties":{"frames":1,"fps":5}},{"file":"old_sprites-fox2.png","version":366,"size":881,"properties":{"frames":3,"fps":3}},{"file":"sky.png","version":23,"size":835,"properties":{"frames":1,"fps":5}},{"file":"sprite.png","version":3,"size":383,"properties":{"frames":1,"fps":5}},{"file":"sprite3.png","version":78,"size":637,"properties":{"frames":1,"fps":5}},{"file":"tunnel.png","version":29,"size":462,"properties":{"frames":1,"fps":5}},{"file":"water.png","version":42,"size":1092,"properties":{"frames":2,"fps":5}}],"assets":[],"maps":{"gameover":"{\"width\":24,\"height\":16,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"grassblades:0,1\",\"grassblades:1,1\",\"grassblades:0,0\",\"grassblades:1,0\",\"fox2:0,1\",\"fox2:1,1\",\"fox2:0,0\",\"fox2:1,0\"],\"data\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}","gamewon":"{\"width\":24,\"height\":16,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"grass1:0,0\",\"bunny:0,1\",\"bunny:1,1\",\"bunny:0,0\",\"bunny:1,0\"],\"data\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,2,3,0,2,3,0,2,3,2,3,2,3,0,0,0,0,0,0,0,0,0,0,0,0,4,5,0,4,5,0,4,5,4,5,4,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}","mainmenu":"{\"width\":32,\"height\":32,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"land-watersheet:0,0\",\"land-sprite2:0,1\",\"land-sprite2:1,1\",\"land-sprite2:1,0\",\"land-grass_corner_brown:0,1\",\"land-grass_stright_brown:1,1\",\"land-grass_corner_brown:1,1\",\"land-grass_side_water:0,1\",\"land-grasssheet:0,0\",\"land-grasssheet:1,1\",\"land-grass_side_water:1,0\",\"land-grass_water_corner:0,0\",\"land-grass_side_water:0,0\",\"land-grass_water_corner:1,0\",\"land-skysheet:0,0\",\"land-skysheet:1,1\"],\"data\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,1,1,1,1,1,1,1,1,1,1,1,1,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,7,1,1,1,1,1,1,1,1,1,1,1,1,8,9,9,9,10,9,9,9,9,9,9,10,9,9,9,9,9,9,9,11,1,1,1,1,1,1,1,1,1,1,1,1,8,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,9,9,11,1,1,1,1,1,1,1,1,1,1,1,1,12,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,14,1,1,1,1,1,1,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,16,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15]}","plains":"{\"width\":32,\"height\":32,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"land-grass_corner:0,1\",\"land-grass_side:1,1\",\"land-grass_corner:1,1\",\"land-grass_side:0,1\",\"land-grasssheet:0,0\",\"land-grass_side:1,0\",\"land-grasssheet:1,1\",\"land-grass_corner:0,0\",\"land-grass_side:0,0\",\"land-grass_corner:1,0\"],\"data\":[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,6,4,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,7,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10]}","sea":"{\"width\":24,\"height\":16,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"water:0,0\"],\"data\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}"},"sounds":[{"file":"collect.wav","version":1,"size":24398,"properties":{}}],"music":[{"file":"1.mp3","version":1,"size":1440061,"properties":{}}]};
+var graphics = "M1";
+
+</script><script type="text/javascript">var orientation = 'landscape' ;
+var aspect = '16x9' ;
+var ms_libs = [] ;
+window.skip_service_worker = true;
+window.exported_project = true;
+window.ms_use_server = false ;
+</script><script src="compiler.js"></script><script src="parser.js"></script><script src="processor.js"></script><script src="program.js"></script><script src="routine.js"></script><script src="runner.js"></script><script src="token.js"></script><script src="tokenizer.js"></script><script src="transpiler.js"></script><script src="microengine.js"></script></body><script type="text/javascript">//
+//
+// The game is started with the code below.
+// Once you have received the "started" signal (see below),
+// you can do the following:
+// 1) Inject functions or objects into the global context of the microStudio engine, example:
+//
+//   window.player.setGlobal("special_callback",function(x) { console.info(x) }) ;
+//   // Your microScript code can now call the "special_callback" function
+//
+// 2) Call microScript global functions from your JavaScript code, example:
+//
+//   window.player.call("call_me_from_javascript",[10,1000]) ;
+//   // arguments to the function call are provided as an array
+//
+// 3) Run a microScript code snippet from your JavaScript code, example:
+//
+//   window.player.exec("player.position_x = 50",function(result) { console.log(result) ; }) ;
+//
+
+window.addEventListener("load",function() {
+  window.player = new Player(function(event) {
+    if (event.name == "started") {
+      // signal that the game is started
+    }
+    else if (event.name == "log") {
+      // console.info(event.data) ;
+    }
+  }) ;
+  document.body.focus() ;
+}) ;
+
+</script><script id="code" type="text/x-microscript">
+
+
+// file: actors/aibehaviour.ms
+function()
+ChaserAI = class
+  constructor = function(owner, target)
+    this.owner = owner
+    this.target = target
+    this.speed = owner.speed or 1.0
+
+    this.path = []
+    this.pathTimer = 0
+
+    this.stuckFrames = 0
+    this.lastX = owner.x
+    this.lastY = owner.y
+
+    this.steerDir = 0
+    this.steerCommit = 0
+    this.debugPath = false
+
+    this.verboseDebug = false // toggle console logging
+  end
+
+  logDebug = function(msg)
+    if this.verboseDebug then
+      print("[AI] " + msg)
+    end
+  end
+
+  update = function()
+    // Detect stuck
+    var movedDist = sqrt((this.owner.x - this.lastX)^2 + (this.owner.y - this.lastY)^2)
+    if movedDist < 0.1 then
+      this.stuckFrames += 1
+    else
+      this.stuckFrames = 0
+      this.steerDir = 0
+      this.steerCommit = 0
+    end
+    this.lastX = this.owner.x
+    this.lastY = this.owner.y
+
+    // Refresh path
+    this.pathTimer -= 1
+    if this.pathTimer <= 0 then
+      this.path = GetPath(this.owner.x, this.owner.y, this.target.x, this.target.y)
+      this.pathTimer = 60
+      this.logDebug("New path: " + this.path.length + " nodes")
+    end
+
+    this.followPath()
+  end
+
+  followPath = function()
+    if this.path.length <= 1 then return end
+
+    var targetNode = this.path[1]
+    var dx = targetNode[0] - this.owner.x
+    var dy = targetNode[1] - this.owner.y
+    var dist = sqrt(dx*dx + dy*dy)
+
+    this.logDebug("Pos=(" + this.owner.x + "," + this.owner.y +
+                  ") Target=(" + targetNode[0] + "," + targetNode[1] +
+                  ") Dist=" + dist + " stuck=" + this.stuckFrames)
+
+    if dist < 1 then
+      this.path.remove(0)
+      this.logDebug("Waypoint reached, moving to next")
+      return
+    end
+
+    dx /= dist
+    dy /= dist
+
+    // Edge-based blocked detection
+    this.owner.calcEdges()
+    this.owner.calcExtents()
+    var blocked = IsWater(this.owner.eastEdge, this.owner.y) or
+                  IsBush(this.owner.eastEdge, this.owner.y) or
+                  IsWater(this.owner.westEdge, this.owner.y) or
+                  IsBush(this.owner.westEdge, this.owner.y) or
+                  IsWater(this.owner.x, this.owner.northEdge) or
+                  IsBush(this.owner.x, this.owner.northEdge) or
+                  IsWater(this.owner.x, this.owner.southEdge) or
+                  IsBush(this.owner.x, this.owner.southEdge)
+
+    if blocked or this.stuckFrames > 3 then
+      this.logDebug("Blocked=" + blocked + " stuckFrames=" + this.stuckFrames)
+
+      // Continue committed steer if still viable
+      if this.steerCommit > 0 then
+        var commitAngle = (this.steerDir == -1) and -0.5 or 0.5
+        this.steerCommit -= 1
+        this.logDebug("Continuing committed steer dir=" + this.steerDir)
+        if this.trySteer(dx, dy, commitAngle) then return end
+      end
+
+      // Try fresh steer
+      var found = this.steerAroundObstacle(dx, dy)
+      if found then return end
+
+      // Only skip waypoint if steering failed
+      if this.path.length > 2 then
+        this.logDebug("Skipping blocked waypoint")
+        this.path.remove(1)
+      end
+    else
+      // Direct path is clear (normal move)
+      this.owner.updateCollision(dx * this.speed, dy * this.speed)
+    end
+  end
+
+  steerAroundObstacle = function(dx, dy)
+    var angles = [0.25, -0.25, 0.5, -0.5, 1.0, -1.0, 1.5, -1.5]
+    for ang in angles
+      this.logDebug("Trying steer ang=" + ang)
+      if this.trySteer(dx, dy, ang) then return true end
+    end
+    this.logDebug("All steer angles failed")
+    return false
+  end
+
+  trySteer = function(dx, dy, ang)
+    var cosA = cos(ang)
+    var sinA = sin(ang)
+    var sx = dx * cosA - dy * sinA
+    var sy = dx * sinA + dy * cosA
+
+    // BYPASS COLLISION: move directly
+    this.owner.x += sx * this.speed
+    this.owner.y += sy * this.speed
+
+    this.steerDir = (ang < 0) and -1 or 1
+    this.steerCommit = 5
+    this.logDebug("Bypass-collision steer ang=" + ang + " commit=" + this.steerCommit)
+    return true
+  end
+
+  drawDebugPath = function(cam)
+    if not this.debugPath or this.path.length == 0 then return end
+    screen.setColor(255, 0, 0)
+  
+    var prevX = this.owner.x
+    var prevY = this.owner.y
+  
+    for p in this.path
+      var px = p[0]
+      var py = p[1]
+      screen.drawLine(prevX - cam.x, prevY - cam.y, px - cam.x, py - cam.y)
+      screen.drawSprite("navpoint", px - cam.x, py - cam.y, 6, 6)
+      prevX = px
+      prevY = py
+    end
+  
+    screen.setColor(255, 255, 255)
+  end
+end
+end()
+
+
+
+// file: actors/bunny.ms
+function()
+Bunny = class extends Entity
+  constructor = function(x, y)
+    super(x, y, 32, 32)
+
+    // Tuned collision box offsets
+    this.bboxLeftOffset = -5
+    this.bboxRightOffset = 5
+    this.bboxUpOffset = 5
+    this.bboxDownOffset = -10
+
+    this.debugCollision = false
+
+    this.isMoving = false
+    this.isFacing = -1
+  end
+
+  update = function()
+    // Pull inputs (use your existing input vars)
+    this.isMoving = inputMoving
+    this.isFacing = inputFacing
+
+    var moveX = inputMoveX
+    var moveY = inputMoveY
+    this.updateCollision(moveX, moveY)
+    //print(moveX, moveY)
+    //print("Raw axis:", gamepad.axisX, gamepad.axisY)
+    // Optional: sync legacy globals if needed
+    // playerx = this.x
+    // playery = this.y
+  end
+
+  draw = function()
+    screen.setDrawScale(this.isFacing, 1)
+
+    if this.isMoving then
+      this.drawSprite("bunny")
+    else
+      this.drawSprite("bunny.0")
+    end
+
+    this.debugDrawCollision()
+  end
+end
+end()
+
+
+
+// file: actors/entity.ms
+function()
+Entity = class
+  constructor = function(x, y, width, height)
+    this.x = x
+    this.y = y
+    this.width = width
+    this.height = height
+
+    // Default bbox offsets (override per entity)
+    this.bboxLeftOffset = -width / 2
+    this.bboxRightOffset = width / 2
+    this.bboxUpOffset = height / 2
+    this.bboxDownOffset = height / 2
+
+    // Edge and extent fields
+    this.edgeLeft = 0
+    this.edgeRight = 0
+    this.edgeTop = 0
+    this.edgeBottom = 0
+
+    this.westEdge = 0
+    this.eastEdge = 0
+    this.northEdge = 0
+    this.southEdge = 0
+
+    this.westOffset = 0
+    this.eastOffset = 0
+    this.northOffset = 0
+    this.southOffset = 0
+
+    this.debugCollision = false
+  end
+
+  // Edges from centre + offsets (signed)
+  calcEdges = function()
+    this.edgeLeft = this.x + this.bboxLeftOffset
+    this.edgeRight = this.x + this.bboxRightOffset
+    this.edgeTop = this.y - this.bboxUpOffset
+    this.edgeBottom = this.y + this.bboxDownOffset
+  end
+
+  // True min/max edges, and which offset produced each
+  calcExtents = function()
+    if this.edgeLeft <= this.edgeRight then
+      this.westEdge = this.edgeLeft
+      this.westOffset = this.bboxLeftOffset
+      this.eastEdge = this.edgeRight
+      this.eastOffset = this.bboxRightOffset
+    else
+      this.westEdge = this.edgeRight
+      this.westOffset = this.bboxRightOffset
+      this.eastEdge = this.edgeLeft
+      this.eastOffset = this.bboxLeftOffset
+    end
+
+    if this.edgeTop <= this.edgeBottom then
+      this.northEdge = this.edgeTop
+      this.northOffset = -this.bboxUpOffset
+      this.southEdge = this.edgeBottom
+      this.southOffset = this.bboxDownOffset
+    else
+      this.northEdge = this.edgeBottom
+      this.northOffset = this.bboxDownOffset
+      this.southEdge = this.edgeTop
+      this.southOffset = -this.bboxUpOffset
+    end
+  end
+
+  // Solid obstacle + map bound handling. Pass desired movement delta.
+  updateCollision = function(moveX, moveY)
+    var newX = this.x + moveX
+    var newY = this.y + moveY
+
+    this.x = newX
+    this.y = newY
+    this.calcEdges()
+    this.calcExtents()
+
+    var blocked = false
+
+    var x0 = this.westEdge
+    var x1 = this.eastEdge
+    if x1 < x0 then var t = x0 x0 = x1 x1 = t end
+
+    var y0 = this.northEdge
+    var y1 = this.southEdge
+    if y1 < y0 then var t = y0 y0 = y1 y1 = t end
+
+    for px = x0 to x1
+      if IsWater(px, this.southEdge) or IsBush(px, this.southEdge) then blocked = true break end
+    end
+
+    if not blocked then
+      for px = x0 to x1
+        if IsWater(px, this.northEdge) or IsBush(px, this.northEdge) then blocked = true break end
+      end
+    end
+
+    if not blocked then
+      for py = y0 to y1
+        if IsWater(this.westEdge, py) or IsBush(this.westEdge, py) then blocked = true break end
+      end
+    end
+
+    if not blocked then
+      for py = y0 to y1
+        if IsWater(this.eastEdge, py) or IsBush(this.eastEdge, py) then blocked = true break end
+      end
+    end
+
+    if blocked then
+      this.x = this.x - moveX
+      this.y = this.y - moveY
+      this.calcEdges()
+      this.calcExtents()
+    end
+
+    // Clamp to map bounds
+    if this.westEdge < -halfMapW then
+      this.x = -halfMapW - this.westOffset
+      this.calcEdges()
+      this.calcExtents()
+    end
+    if this.eastEdge > halfMapW then
+      this.x = halfMapW - this.eastOffset
+      this.calcEdges()
+      this.calcExtents()
+    end
+    if this.northEdge < -halfMapH then
+      this.y = -halfMapH - this.northOffset
+      this.calcEdges()
+      this.calcExtents()
+    end
+    if this.southEdge > halfMapH then
+      this.y = halfMapH - this.southOffset
+      this.calcEdges()
+      this.calcExtents()
+    end
+  end
+
+  // Camera-aware sprite drawing
+  drawSprite = function(spriteName)
+    screen.drawSprite(spriteName, this.x - camera.x, this.y - camera.y, this.width, this.height)
+  end
+
+  // Optional: draw exact collision box with camera offset
+  debugDrawCollision = function()
+    if not this.debugCollision then return end
+    this.calcEdges()
+    this.calcExtents()
+
+    screen.setColor(128, 0, 128)
+    screen.drawLine(this.westEdge - camera.x, this.northEdge - camera.y, this.eastEdge - camera.x, this.northEdge - camera.y)
+    screen.drawLine(this.eastEdge - camera.x, this.northEdge - camera.y, this.eastEdge - camera.x, this.southEdge - camera.y)
+    screen.drawLine(this.eastEdge - camera.x, this.southEdge - camera.y, this.westEdge - camera.x, this.southEdge - camera.y)
+    screen.drawLine(this.westEdge - camera.x, this.southEdge - camera.y, this.westEdge - camera.x, this.northEdge - camera.y)
+    screen.setColor(255, 255, 255)
+  end
+end
+end()
+
+
+
+// file: actors/fox.ms
+function()
+Fox = class extends Entity
+  constructor = function(x, y, target)
+    super(x, y, 32, 32)
+
+    // Tuned collision box offsets
+    this.bboxLeftOffset = -5
+    this.bboxRightOffset = 5
+    this.bboxUpOffset = 5
+    this.bboxDownOffset = -10
+
+    this.speed = 0.8
+    this.debugCollision = false
+
+    this.ai = new ChaserAI(this, target)
+    this.ai.debugPath = false
+    this.isFacing = -1
+    this.lastX = x
+    this.lastY = y
+    this.isMoving = false
+    this.moveFrames = this.moveFrames or 0
+
+  end
+
+
+
+  update = function()
+      var prevX = this.x
+      var prevY = this.y
+  
+      this.ai.update()
+  
+      var dx = this.x - prevX
+      var dy = this.y - prevY
+  
+      if abs(dx) > 0.1 then
+          this.isFacing = (dx < 0) and 1 or -1
+      end
+  
+      var dist = sqrt(dx * dx + dy * dy)
+  
+     
+      if dist > 0.1 then
+          this.moveFrames += 1
+      else
+          this.moveFrames -= 1
+      end
+  
+      
+      if this.moveFrames < 0 then this.moveFrames = 0 end
+      if this.moveFrames > 5 then this.moveFrames = 5 end
+  
+      
+      this.isMoving = this.moveFrames > 1
+  end
+
+  draw = function()
+    screen.setDrawScale(this.isFacing, 1)
+    //this.drawSprite("fox")
+    if this.isMoving then
+      this.drawSprite("fox")
+    else
+      this.drawSprite("fox.4")
+    end
+  
+    this.debugDrawCollision()
+    if this.ai then
+      this.ai.drawDebugPath(camera)
+    end
+  end
+end
+end()
+
+
+
+// file: button.ms
+function()
+Button = class
+  constructor = function(x, y, w, h, label, onClick)
+      this.x = x
+      this.y = y
+      this.w = w
+      this.h = h
+      this.label = label
+      this.onClick = onClick
+      this.visible = true
+      this.enabled = true
+      this.clicked = false
+      this.selected = false   // for highlight state
+  end
+  
+  highlight = function(isSelected)
+      this.selected = isSelected
+  end
+  
+  update = function()
+      this.clicked = false
+      if not this.visible or not this.enabled then return end
+  
+      // --- Hover detection (mouse or touch pointer) ---
+      var hovering = false
+      if mouse.x >= this.x - this.w/2 and mouse.x <= this.x + this.w/2 and
+         mouse.y >= this.y - this.h/2 and mouse.y <= this.y + this.h/2 then
+          hovering = true
+      end
+  
+      // If hovering, mark as selected
+      if hovering then
+          this.selected = true
+          // Optional: activate on click
+          if mouse.left and not this.clicked then
+              this.clicked = true
+              if this.onClick != null then
+                  this.onClick()
+              end
+          end
+      end
+  
+      // --- Touch detection (still works for mobile) ---
+      if touch.touching then
+          for t in touch.touches
+              if t.x >= this.x - this.w/2 and t.x <= this.x + this.w/2 and
+                 t.y >= this.y - this.h/2 and t.y <= this.y + this.h/2 then
+                  this.selected = true
+                  if not this.clicked then
+                      this.clicked = true
+                      if this.onClick != null then
+                          this.onClick()
+                      end
+                  end
+              end
+          end
+      end
+  end
+  
+  draw = function()
+    if not this.visible then return end
+
+    if this.selected then
+        screen.setColor("#FF0")
+        screen.setAlpha(1)
+    else
+        screen.setColor("#444")
+        screen.setAlpha(0)
+        //screen.setColor(this.enabled and "#444" or "#222")
+    end
+    screen.fillRect(this.x, this.y, this.w, this.h)
+    
+    screen.setAlpha(1)
+    if this.selected then
+        screen.setColor("#000")
+    else
+        screen.setColor("#FFF")
+    end
+    screen.drawText(this.label, this.x, this.y, 10)
+    if not this.selected then
+      screen.setLineWidth(0.1)
+      screen.drawTextOutline(this.label, this.x, this.y, 10,"#000")
+    end
+    //screen.setLineWidth(0.1)
+    //screen.drawTextOutline(this.label, this.x, this.y, 10,"#000")
+    screen.setLineWidth(1)
+  end
+end
+
+ButtonSet = class
+  constructor = function()
+      this.buttons = []
+      this.selectedIndex = 0
+      this.inputCooldown = 1
+  end
+  
+  addButton = function(button)
+      this.buttons.push(button)
+  end
+  
+  update = function()
+    if this.inputCooldown > 0 then
+        this.inputCooldown -= 1
+    end
+
+    var mouseUsed = false
+
+    // Hover detection
+    for i = 0 to this.buttons.length - 1
+        var b = this.buttons[i]
+        b.update()
+
+        if mouse.x >= b.x - b.w/2 and mouse.x <= b.x + b.w/2 and
+           mouse.y >= b.y - b.h/2 and mouse.y <= b.y + b.h/2 then
+            this.selectedIndex = i
+            mouseUsed = true
+        end
+    end
+
+    // Controller/keyboard navigation
+    if not mouseUsed and this.inputCooldown <= 0 then
+        if inputTapUp then
+            this.selectedIndex -= 1
+            if this.selectedIndex < 0 then this.selectedIndex = this.buttons.length - 1 end
+            this.inputCooldown = 10
+        else
+          if inputTapDown then
+            this.selectedIndex += 1
+            if this.selectedIndex >= this.buttons.length then this.selectedIndex = 0 end
+            this.inputCooldown = 10
+          end
+        end
+    end
+
+    // Activate via interact
+    if inputInteractTap then
+        this.buttons[this.selectedIndex].onClick()
+    end
+  end
+  
+  draw = function()
+      for i = 0 to this.buttons.length - 1
+          this.buttons[i].highlight(i == this.selectedIndex)
+          this.buttons[i].draw()
+      end
+  end
+end
+
+
+end()
+
+
+
+// file: camera.ms
+function()
+Camera = class
+  constructor = function()
+    this.x = 0
+    this.y = 0
+    this.target = null
+    this.lerp = 0.1 // smooth follow factor
+  end
+
+  follow = function(entity)
+    this.target = entity
+  end
+
+  update = function()
+    if this.target == null then return end
+
+    var tx = this.target.x
+    var ty = this.target.y
+
+    this.x += (tx - this.x) * this.lerp
+    this.y += (ty - this.y) * this.lerp
+
+    // Clamp camera to map bounds
+    //var viewW = screen.getWidth()
+    //var viewH = screen.getHeight()
+
+    var halfViewW = viewW / 2
+    var halfViewH = viewH / 2
+
+    var minX = -halfMapW + halfViewW
+    var maxX = halfMapW - halfViewW
+    var minY = -halfMapH + halfViewH
+    var maxY = halfMapH - halfViewH
+
+    this.x = clamp(this.x, minX, maxX)
+    this.y = clamp(this.y, minY, maxY)
+  end
+end
+
+clamp = function(val, min, max)
+  if val < min then return min end
+  if val > max then return max end
+  return val
+end
+end()
+
+
+
+// file: gen/bushgen.ms
+function()
+bushPositions = []
+bushSize = 16
+
+GenerateBushes = function(seed, count, minDist)
+  random.seed(seed)
+  bushPositions = []
+  
+  var attempts = 0
+  var maxAttempts = count * 20 // safety limit
+  
+  while bushPositions.length < count and attempts < maxAttempts
+    attempts += 1
+    
+    // random position in map space (origin at centre)
+    var bushX = random.nextInt(mapWidth) - halfMapW
+    var bushY = random.nextInt(mapHeight) - halfMapH
+    
+    // skip if on water
+    if IsWater(bushX, bushY) then continue end
+    
+    var tooClose = false
+    
+    // check distance to existing bushes
+    for b in bushPositions
+      var dx = bushX - b[0]
+      var dy = bushY - b[1]
+      if dx*dx + dy*dy < minDist*minDist then
+        tooClose = true
+        break
+      end
+    end
+    if tooClose then continue end
+    
+    // check distance to grass blades
+    for g in grassBladePositions
+      var dx = bushX - g[0]
+      var dy = bushY - g[1]
+      if dx*dx + dy*dy < minDist*minDist then
+        tooClose = true
+        break
+      end
+    end
+    if tooClose then continue end
+    
+    // check distance to carrots
+    for c in carrots
+      var dx = bushX - c.x
+      var dy = bushY - c.y
+      if dx*dx + dy*dy < minDist*minDist then
+        tooClose = true
+        break
+      end
+    end
+    if tooClose then continue end
+    
+    // passed all checks — place bush
+    bushPositions.push([bushX, bushY])
+  end
+end
+
+IsBush = function(x, y)
+  for b in bushPositions
+    if x >= b[0] - bushSize/2 and x < b[0] + bushSize/2 and
+       y >= b[1] - bushSize/2 and y < b[1] + bushSize/2 then
+      return true
+    end
+  end
+  return false
+end
+
+DrawBushes = function()
+  for b in bushPositions
+    screen.drawSprite("bush", b[0] - camera.x, b[1] - camera.y, 16, 16)
+  end
+end
+
+end()
+
+
+
+// file: gen/carrot.ms
+function()
+var carrots = []
+
+InitCarrots = function(seed, count, minDist)
+  random.seed(seed)
+  carrots = []
+  
+  var attempts = 0
+  var maxAttempts = count * 20 // safety limit
+  
+  while carrots.length < count and attempts < maxAttempts
+    attempts += 1
+    
+    // random position in map space (origin at centre)
+    var cx = random.nextInt(mapWidth) - halfMapW
+    var cy = random.nextInt(mapHeight) - halfMapH
+    
+    // skip if on water
+    if IsWater(cx, cy) then continue end
+    if IsBush(cx, cy) then continue end
+
+    
+    // check distance to existing carrots
+    var tooClose = false
+    for c in carrots
+      var dx = cx - c.x
+      var dy = cy - c.y
+      if dx*dx + dy*dy < minDist*minDist then
+        tooClose = true
+        break
+      end
+    end
+    
+    if not tooClose then
+      var carrot = object
+        x = cx
+        y = cy
+        pickedUp = false
+      end
+      carrots.push(carrot)
+    end
+  end
+end
+
+
+UpdateCarrots = function()
+  for carrot in carrots
+    if not carrot.pickedUp then
+      //var dx = abs(playerx - carrot.x)
+      //var dy = abs(playery - carrot.y)
+      var dx = abs(player.x - carrot.x)
+      var dy = abs(player.y - carrot.y)
+      if dx < 16 and dy < 16 then
+        carrot.pickedUp = true
+        print("Carrot eaten at " + carrot.x + "," + carrot.y)
+        my_sound = audio.playSound("collect")
+        my_sound.setVolume(0.5)
+
+        GameScore= GameScore+1
+        // Increment any "collect_carrots" objectives
+        UpdateObjectiveProgress("collect_carrots", 1)
+
+      end
+    end
+  end
+end
+
+DrawCarrots = function()
+  screen.setDrawScale(1,1)
+  for carrot in carrots
+    if not carrot.pickedUp then
+      screen.drawSprite("carrot", carrot.x - camera.x, carrot.y - camera.y, 16, 16)
+    end
+  end
+end
+end()
+
+
+
+// file: gen/grassbladegen.ms
+function()
+GenerateGrassBlades = function(seed, count, minDist)
+  random.seed(seed)
+  grassBladePositions = []
+  
+  var attempts = 0
+  var maxAttempts = count * 20 // safety limit
+  
+  while grassBladePositions.length < count and attempts < maxAttempts
+    attempts += 1
+    
+    // random position in map space (origin at centre)
+    var gx = random.nextInt(mapWidth) - halfMapW
+    var gy = random.nextInt(mapHeight) - halfMapH
+    
+    // skip if on water
+    if IsWater(gx, gy) then continue end
+    if IsBush(gx, gy) then continue end
+    // check distance to all existing blades
+    var tooClose = false
+    for g in grassBladePositions
+      var dx = gx - g[0]
+      var dy = gy - g[1]
+      if dx*dx + dy*dy < minDist*minDist then
+        tooClose = true
+        break
+      end
+    end
+    
+    if not tooClose then
+      grassBladePositions.push([gx, gy])
+    end
+  end
+end
+
+DrawGrassBlades= function()
+  for g in grassBladePositions
+    screen.drawSprite("grassblades", g[0] - camera.x, g[1] - camera.y, 16, 16)
+  end
+end
+end()
+
+
+
+// file: gen/navgen.ms
+function()
+navPoints = []
+navPointSize = 15//6
+
+GenerateNavPoints = function()
+  navPoints = []
+  
+  // 1. Create points
+  for gx = -halfMapW to halfMapW by navPointSize
+    for gy = -halfMapH to halfMapH by navPointSize
+      var checkX = gx + navPointSize / 2
+      var checkY = gy + navPointSize / 2
+      
+      //if IsWater(checkX, checkY) then continue end
+      //if IsBush(checkX, checkY) then continue end
+      if IsWater(gx, gy) then continue end
+      if IsBush(gx, gy) then continue end
+
+      
+      
+      var point = object
+        x = gx
+        y = gy
+        neighbours = []
+      end
+      navPoints.push(point)
+    end
+  end
+  
+  // 2. Build lookup table for O(1) neighbour access
+  var navLookup = object end
+  for p in navPoints
+    navLookup[p.x + "," + p.y] = p
+  end
+  
+  // 3. Link neighbours (8‑way with corner checks)
+  for p in navPoints
+    var right = navLookup[(p.x + navPointSize) + "," + p.y]
+    var left  = navLookup[(p.x - navPointSize) + "," + p.y]
+    var up    = navLookup[p.x + "," + (p.y + navPointSize)]
+    var down  = navLookup[p.x + "," + (p.y - navPointSize)]
+    
+    var upRight   = navLookup[(p.x + navPointSize) + "," + (p.y + navPointSize)]
+    var upLeft    = navLookup[(p.x - navPointSize) + "," + (p.y + navPointSize)]
+    var downRight = navLookup[(p.x + navPointSize) + "," + (p.y - navPointSize)]
+    var downLeft  = navLookup[(p.x - navPointSize) + "," + (p.y - navPointSize)]
+    
+    // 4‑way
+    if right != null then p.neighbours.push(right) end
+    if left  != null then p.neighbours.push(left)  end
+    if up    != null then p.neighbours.push(up)    end
+    if down  != null then p.neighbours.push(down)  end
+    
+    // 8‑way diagonals (only if both adjacent orthogonals exist)
+    if upRight != null and up != null and right != null then p.neighbours.push(upRight) end
+    if upLeft  != null and up != null and left  != null then p.neighbours.push(upLeft)  end
+    if downRight != null and down != null and right != null then p.neighbours.push(downRight) end
+    if downLeft  != null and down != null and left  != null then p.neighbours.push(downLeft)  end
+  end
+  
+  print("Generated nav with 8-way links")
+end
+
+
+DrawNavPoints = function()
+  // draw connections first
+  //screen.setColor(128, 0, 128) // purple
+  //for p in navPoints
+  //  for n in p.neighbours
+  //    screen.drawLine(p.x, p.y, n.x, n.y)
+  //  end
+  //end
+  
+  // reset to white for sprites
+  screen.setColor(255, 255, 255)
+  
+  // draw nav point sprites
+  for p in navPoints
+    screen.drawSprite("navpoint", p.x, p.y, 8, 8)
+  end
+end
+
+FindNearestNavPoint = function(x, y)
+  var nearest = null
+  var nearestDist = 999999
+  
+  for p in navPoints
+    if p.neighbours.length == 0 then continue end // skip isolated points
+    
+    var dx = p.x - x
+    var dy = p.y - y
+    var d2 = dx*dx + dy*dy
+    if d2 < nearestDist then
+      nearestDist = d2
+      nearest = p
+    end
+  end
+  
+  return nearest
+end
+
+
+
+DebugReachableFrom = function(start)
+  if start == null then
+    print("DebugReachableFrom: start is null")
+    return
+  end
+
+  var visited = object end
+  var stack = [start]
+  visited[start.x + "," + start.y] = true
+
+  var count = 0
+  screen.setColor(0,255,0) // bright green
+
+  while stack.length > 0
+    var cur = stack.pop()
+    if cur == null then
+      print("Null cur in stack")
+      continue
+    end
+
+    // draw a solid square so it stands out
+    screen.drawRect(cur.x - 3, cur.y - 3, 6, 6)
+    count += 1
+
+    // draw lines to neighbours and explore
+    for n in cur.neighbours
+      screen.drawLine(cur.x, cur.y, n.x, n.y)
+      var key = n.x + "," + n.y
+      if visited[key] == null then
+        visited[key] = true
+        stack.push(n)
+      end
+    end
+  end
+
+  print("Reachable points from start: " + count)
+end
+
+
+// Helpers
+Heuristic = function(a, b)
+  var dx = a.x - b.x
+  var dy = a.y - b.y
+  return sqrt(dx*dx + dy*dy)
+end
+
+Dist = function(a, b)
+  var dx = a.x - b.x
+  var dy = a.y - b.y
+  return sqrt(dx*dx + dy*dy)
+end
+
+InOpenSet = function(set, node)
+  var key = node.x + "," + node.y
+  for n in set
+    if (n.x + "," + n.y) == key then return true end
+  end
+  return false
+end
+
+ReconstructPath = function(cameFrom, current, start)
+  var path = []
+  var cur = current
+  var curKey = cur.x + "," + cur.y
+  var stepCount = 0
+
+  //print("  Reconstructing path:")
+  while cur != null
+    //print("    Step " + stepCount + ": " + cur.x + "," + cur.y)
+    path.push([cur.x, cur.y])
+    cur = cameFrom[curKey]
+    if cur != null then
+      curKey = cur.x + "," + cur.y
+    end
+    stepCount += 1
+  end
+
+  path.reverse()
+  //print("  Path length: " + path.length)
+  //if path.length > 0 then
+    //print("  Path first point: " + path[0][0] + "," + path[0][1])
+    //print("  Path last point:  " + path[path.length-1][0] + "," + path[path.length-1][1])
+  //end
+  return path
+end
+
+GetPath = function(startX, startY, endX, endY)
+  //print("=== GetPath called ===")
+  //print("  Start coords: " + startX + "," + startY)
+  //print("  Goal coords:  " + endX + "," + endY)
+
+  // Find nearest nav points
+  var start = FindNearestNavPoint(startX, startY)
+  var goal  = FindNearestNavPoint(endX, endY)
+  if start == null or goal == null then
+    print("  No valid start or goal — returning empty path")
+    return []
+  end
+
+  var startKey = start.x + "," + start.y
+  var goalKey  = goal.x + "," + goal.y
+
+  //print("  Start nav point: " + startKey + " (neighbours: " + start.neighbours.length + ")")
+  //print("  Goal nav point:  " + goalKey + " (neighbours: " + goal.neighbours.length + ")")
+
+  // A* setup
+  var openSet = [start]
+  var cameFrom = object end
+  var gScore = object end
+  var fScore = object end
+  var closedSet = object end
+
+  gScore[startKey] = 0
+  fScore[startKey] = Heuristic(start, goal)
+
+  var stepLimit = 5000
+  var stepCount = 0
+
+  //print("  Beginning A* loop")
+  while openSet.length > 0
+    stepCount += 1
+    if stepCount > stepLimit then
+      print("⚠️ Step limit reached — breaking to avoid infinite loop")
+      break
+    end
+
+    // Find node with lowest fScore (null-safe)
+    var currentIndex = 0
+    var current = openSet[0]
+    var currentKey = current.x + "," + current.y
+    var bestScore
+    if fScore[currentKey] != null then
+      bestScore = fScore[currentKey]
+    else
+      bestScore = 999999
+    end
+
+    for i = 1 to openSet.length - 1
+      var k = openSet[i].x + "," + openSet[i].y
+      var score
+      if fScore[k] != null then
+        score = fScore[k]
+      else
+        score = 999999
+      end
+      if score < bestScore then
+        current = openSet[i]
+        currentKey = k
+        currentIndex = i
+        bestScore = score
+      end
+    end
+
+    //print("---- Step " + stepCount + " ----")
+    //print("OpenSet size: " + openSet.length)
+    //print("Current: " + currentKey + " fScore=" + bestScore)
+
+    // Goal reached
+    if currentKey == goalKey then
+      //print("  Goal reached at step " + stepCount)
+      return ReconstructPath(cameFrom, current, start)
+    end
+
+    // Move current from openSet to closedSet
+    openSet.remove(currentIndex)
+    closedSet[currentKey] = true
+
+    // Explore neighbours
+    for n in current.neighbours
+      var nKey = n.x + "," + n.y
+      if closedSet[nKey] == true then
+        //print("  Skipping neighbour " + nKey + " (already closed)")
+        continue
+      end
+
+      var tentativeG = gScore[currentKey] + Dist(current, n)
+      //print("  Neighbour " + nKey + " tentativeG=" + tentativeG)
+
+      if gScore[nKey] == null or tentativeG < gScore[nKey] then
+        cameFrom[nKey] = current
+        gScore[nKey] = tentativeG
+        fScore[nKey] = tentativeG + Heuristic(n, goal)
+        //print("    Updated gScore=" + gScore[nKey] + " fScore=" + fScore[nKey])
+
+        if not InOpenSet(openSet, n) then
+          openSet.push(n)
+          //print("    Added to openSet")
+        //else
+          //print("    Already in openSet")
+        end
+      //else
+        //print("    No update — existing gScore is better")
+      end
+    end
+  end
+
+  print("  No path found after " + stepCount + " steps")
+  return []
+end
+
+end()
+
+
+
+// file: gen/tunnels.ms
+function()
+var tunnels = []
+
+
+UpdateTunnels = function()
+    for t in tunnels
+        var dx = abs(player.x - t.x)
+        var dy = abs(player.y - t.y)
+
+        if dx < 16 and dy < 16 then
+            // Tap: always fires
+            if inputInteractTap then
+                print("Interacted with tunnel")
+            end
+
+            // If covered, handle hold-to-uncover
+            if t.covered then
+                if inputInteractPressed then
+                    // increment timer (assuming 60fps, so ~1/60 sec per frame)
+                    t.uncoverTimer += 1/60
+
+                    // round to 1 decimal place
+                    var progress = floor(t.uncoverTimer * 10) / 10
+                    print("Uncovering: " + progress + " / 3.0 seconds")
+
+                    if t.uncoverTimer >= 3 then
+                        t.covered = false
+                        t.uncoverTimer = 0
+                        print("Tunnel uncovered!")
+                    end
+                else
+                    // Not holding — do nothing, keep progress
+                    // (optional: print current progress)
+                    if t.uncoverTimer > 0 then
+                        var progress = floor(t.uncoverTimer * 10) / 10
+                        print("Progress saved at " + progress + " seconds")
+                    end
+                end
+            end
+        end
+    end
+end
+
+DrawTunnels = function()
+  for t in tunnels
+    if t.covered then
+        screen.drawSprite("covered_tunnel", t.x - camera.x, t.y - camera.y, 32, 32)
+
+        // Show progress bar if in progress
+        if t.uncoverTimer > 0 and t.uncoverTimer < 3 then
+            var barWidth = 32
+            var barHeight = 4
+            var progress = t.uncoverTimer / 3  // 0.0 to 1.0
+
+            // Left edge of the bar (centre it over tunnel)
+            var barLeft = (t.x - camera.x) - (barWidth / 2)
+            var barY = (t.y - camera.y) + 20  // adjust vertical position
+
+            // Draw background (grey)
+            screen.setColor("#555")
+            screen.drawRect(barLeft + barWidth/2, barY, barWidth, barHeight)
+
+            // Draw fill (green) from left to right
+            var fillWidth = barWidth * progress
+            var fillCenterX = barLeft + (fillWidth / 2)
+            screen.setColor("#0F0")
+            screen.drawRect(fillCenterX, barY, fillWidth, barHeight)
+        end
+    else
+        screen.drawSprite("tunnel", t.x - camera.x, t.y - camera.y, 32, 32)
+    end
+  end
+end
+end()
+
+
+
+// file: gen/watergen.ms
+function()
+waterTileSize = 8//6
+waterPositions = []
+
+GenerateWater = function(seed, lakeCount, lakeRadiusTiles)
+  random.seed(seed)
+  waterPositions = []
+  
+  AddWaterTile = function(tx, ty)
+    // skip if outside map bounds
+    if tx < -halfMapW or tx >= halfMapW then return end
+    if ty < -halfMapH or ty >= halfMapH then return end
+    
+    // skip if already added
+    for w in waterPositions
+      if w[0] == tx and w[1] == ty then return end
+    end
+    
+    waterPositions.push([tx, ty])
+    //waterPositions.push([tileX - waterTileSize/2, tileY - waterTileSize/2])
+
+  end
+  
+  // clamp lake centres so radius fits inside map
+  var minX = -halfMapW + lakeRadiusTiles * waterTileSize
+  var maxX =  halfMapW - lakeRadiusTiles * waterTileSize
+  var minY = -halfMapH + lakeRadiusTiles * waterTileSize
+  var maxY =  halfMapH - lakeRadiusTiles * waterTileSize
+  
+  for i = 0 to lakeCount-1
+    var lakeCenterX = floor((random.nextInt(maxX - minX) + minX) / waterTileSize) * waterTileSize
+    var lakeCenterY = floor((random.nextInt(maxY - minY) + minY) / waterTileSize) * waterTileSize
+    
+    var radiusPx = lakeRadiusTiles * waterTileSize
+    
+    for x = -lakeRadiusTiles to lakeRadiusTiles
+      for y = -lakeRadiusTiles to lakeRadiusTiles
+        var px = x * waterTileSize
+        var py = y * waterTileSize
+        var distSq = px*px + py*py
+        
+        // base circular check
+        if distSq <= radiusPx * radiusPx then
+          var noise = random.nextInt(100) // 0–99
+          
+          // erosion: skip some edge tiles
+          if distSq > (radiusPx - waterTileSize) * (radiusPx - waterTileSize) and noise < 30 then
+            continue
+          end
+          
+          // expansion: occasionally add tiles just outside the circle
+          if distSq > radiusPx * radiusPx and noise > 90 then
+            AddWaterTile(lakeCenterX + x * waterTileSize, lakeCenterY + y * waterTileSize)
+          else
+            AddWaterTile(lakeCenterX + x * waterTileSize, lakeCenterY + y * waterTileSize)
+          end
+        end
+      end
+    end
+  end
+end
+
+IsWater = function(x, y)
+  for w in waterPositions
+    if x >= w[0] - waterTileSize/2 and x < w[0] + waterTileSize/2 and
+       y >= w[1] - waterTileSize/2 and y < w[1] + waterTileSize/2 then
+      return true
+    end
+  end
+  return false
+end
+
+DrawWater = function()
+  for w in waterPositions
+    screen.drawSprite("water", w[0] - camera.x, w[1] - camera.y, waterTileSize, waterTileSize)
+  end
+end
+end()
+
+
+
+// file: leveldraw.ms
+function()
+mapWidth = 512//300
+mapHeight= 512//200
+var halfMapW = mapWidth / 2
+var halfMapH = mapHeight / 2
+
+
+
+DrawLevel = function()
+  screen.setDrawScale(1,1)
+  
+  screen.drawMap("plains", -camera.x, -camera.y, mapWidth, mapHeight)
+
+  DrawWater()
+
+  DrawGrassBlades()
+
+  DrawBushes()
+  
+  DrawCarrots()
+  
+  DrawTunnels()
+
+end
+
+end()
+
+
+
+// file: main.ms
+function()
+var viewW = screen.width//482 //300
+var viewH = screen.height///200//200
+
+var gameState = "mainmenu"
+var prevGameState = null
+
+var moveStick
+var actionStick
+var faceButtons
+
+var titleTimer = 0
+var GameScore = 0
+var camera = new Camera()
+
+var player
+var friends =[]
+var foes=[]
+
+ResetGame = function()
+  GameScore = 0
+  titleTimer = 0
+
+  player = null
+  foes = []
+  friends = []
+  carrots = []
+  waterPositions = []
+  bushPositions = []
+  grassBladePositions = []
+  tunnels = []
+  navPoints = []
+
+  //camera = new Camera()
+end
+
+init = function()
+  print("Init")
+  gameState="mainmenu"
+  //DrawMainMenu()
+  
+   // Create joysticks
+  moveStick = new Joystick(viewW/2 - 125, -viewH/2 + 50, 80, 20, "rgb(255,255,255)", "rgb(0,255,0)")
+  actionStick = new Joystick(viewW/2 - 60, -viewH/2 + 60, 60, 15, "rgb(255,0,0)", "rgb(0,0,255)")
+  faceButtons = new VirtualGamepad(viewW  +115, -viewH/2 + 60, 30)
+  print("Created virtual controller")
+  
+end
+
+changeState = function(newState)
+    if newState != gameState then
+        local oldState = gameState
+        gameState = newState
+        onStateEnter(newState, oldState)
+        prevGameState = newState
+    end
+end
+
+onStateEnter = function(newState, oldState)
+    if newState == "mainmenu" then
+        setupMainMenu()
+    end
+
+    if newState == "play" then
+        print("Play State")
+        if oldState == "mainmenu" or oldState == "levelcomplete" or oldState == "gameover" then
+            // Starting a new game
+            ResetGame()
+            GenCollectLevel()
+        else
+            // Coming from pause — just resume
+            print("Resuming from pause")
+            camera.follow(player)
+        end
+    end
+
+    if newState == "pause" then
+        print("Pause State")
+    end
+
+    if newState == "gameover" then
+        print("Game over State")
+    end
+end
+
+update = function()
+  // Detect state change
+  if gameState != prevGameState then
+      onStateEnter(gameState, prevGameState)
+      prevGameState = gameState
+  end
+  
+  viewW = screen.width//482 //300
+  viewH = screen.height///200//200
+  moveStick.update()
+  
+  faceButtons.update()
+  actionStick.update()
+  UpdatePlayerInput()
+  
+  handlePause()
+  if gameState != "play" and gameState != "pause"  then
+      camera.target = null
+      camera.x = 0
+      camera.y = 0
+  end
+
+  if gameState == "mainmenu" then
+    updateMainMenu()
+  end
+  if gameState =="play" then
+    updateGame()
+    
+  end
+  if gameState == "levelcomplete" then
+      updateLevelComplete()
+  end
+
+  if gameState=="gameover"then
+    updateGameOver()
+  end
+  
+end
+
+handlePause = function()
+    if pauseCooldown > 0 then
+        pauseCooldown -= 1
+    end
+
+    if gameState == "play" and inputPauseTap and pauseCooldown == 0 then
+        changeState("pause")
+        pauseCooldown = 1
+    end
+
+    if gameState == "pause" and inputPauseTap and pauseCooldown == 0 then
+        changeState("play")
+        pauseCooldown = 1
+    end
+end
+
+updateGame = function()
+  //bunny.update()
+  player.update()
+  camera.update()
+  
+  for e in foes
+    e.update()
+    var dx = abs(e.x - player.x)
+    var dy = abs(e.y - player.y)
+    
+    if dx < 16 and dy < 16 then
+      print("Fox caught the bunny!")
+      // Trigger game over, reduce health, or reset level here
+      gameState="gameover"
+        
+    end
+
+  end
+  
+
+  UpdateCarrots()
+  UpdateObjectives()
+  UpdateTunnels()
+  
+  //UpdateFox()
+end
+
+draw = function()
+  screen.clear(black)
+  if gameState == "play" then
+    DrawLevel()
+    bunny.draw()
+    for e in foes
+      e.draw()
+    end
+    //DrawCarrots()
+    DrawUI()
+    DrawObjectivesUI() 
+    //DrawFox()
+    //DrawNavPoints()
+    //DebugReachableFrom(FindNearestNavPoint(fox.x, fox.y))
+    moveStick.draw()
+    faceButtons.draw()
+  end
+  if gameState=="mainmenu" then
+    DrawMainMenu()
+    DrawMenuUI()
+  end
+  if gameState == "levelcomplete" then
+    DrawLevelComplete()
+    DrawLevelCompleteUI()
+  end
+
+  if gameState=="gameover" then
+    DrawGameOver()
+    DrawGameOverUI()
+  end
+  if gameState=="pause" then
+    DrawPauseUI()
+  end
+  //print("gamestate "+gameState)
+  
+end
+
+end()
+
+
+
+// file: mainmenu.ms
+function()
+var menuIndex = 0
+
+var menuInputCooldown = 0
+
+DrawMainMenu = function()
+  //print("Launching Main Menu")
+  screen.setDrawScale(1,1)
+  screen.drawMap("mainmenu", -camera.x, -camera.y, mapWidth, mapHeight)
+end
+
+setupMainMenu = function()
+    mainMenu = new ButtonSet()
+    
+    mainMenu.addButton(new Button(0, -32, 100, 20, "New Game", function()
+        ResetGame()
+        GenCollectLevel()
+        changeState("play")
+    end))
+    
+    mainMenu.addButton(new Button(0, -12, 100, 20, "Resume Game", function()
+        print("Nothing To Resume")
+        
+    end))
+
+    
+end
+
+
+
+updateMainMenu = function()
+    mainMenu.update()
+end
+
+
+
+DrawMenuUI = function()
+    screen.setDrawScale(1, 1)
+    screen.setFont("PixAntiqua")
+
+    screen.setLineWidth(1)
+    screen.drawText("Bunny Run", 0, 50, 20, "#FFF")
+    screen.setLineWidth(0.5)
+    screen.drawTextOutline("Bunny Run", 0, 50, 20, "#000")
+
+    mainMenu.draw()
+
+end
+
+
+
+DrawGameOver = function()
+  screen.setDrawScale(1,1)
+  screen.drawMap("gameover", -camera.x, -camera.y, mapWidth, mapHeight)
+end
+
+updateGameOver = function()
+  //if titleTimer < 600 then  // ~5 seconds at 60fps
+  //  titleTimer = titleTimer + 1
+  //end
+  if keyboard.ENTER or keyboard.SPACE or keyboard.ESCAPE or gamepad.A or gamepad.MENU or touch.touching then
+    print("Starting Level 1")
+    menuInputCooldown = 10
+
+    //SetupLevel1()
+    
+    gameState = "mainmenu"
+  end
+
+end
+
+DrawGameOverUI = function()
+  screen.setDrawScale(1, 1)
+  screen.setFont("PixAntiqua")
+  if titleTimer < 300 then
+    screen.setLineWidth(1)
+    screen.drawText("Game Over",0,25,16, "#FFF")
+    //screen.drawText("You were caught!",0,0,11, "#FFF")
+    screen.drawText("Press Space or Enter",0,-25,11, "#FFF")
+    screen.setLineWidth(0.1)
+    //screen.drawTextOutline("A Game By Olivia Lennighan",0,0,11, "#000")
+    screen.drawTextOutline("Game Over",0,25,16, "#000")
+    screen.drawTextOutline("Press Space or Enter",0,-25,11, "#000")
+   // screen.drawText("A Game By Richard Whiteley",0,0,11, "#FFF")
+   // screen.drawText("And Olivia Lennighan",0,-15,11, "#FFF")
+   
+  end
+
+end
+
+DrawPauseUI = function()
+  screen.setDrawScale(1, 1)
+  screen.setFont("PixAntiqua")
+  if titleTimer < 300 then
+    screen.setLineWidth(1)
+    screen.drawText("Paused",0,25,16, "#FFF")
+    screen.drawText("Press ESC or Menu",0,-25,11, "#FFF")
+    screen.setLineWidth(0.1)
+    screen.drawTextOutline("Paused",0,25,16, "#000")
+    screen.drawTextOutline("Press ESC or Menu",0,-25,11, "#000")
+
+   
+  end
+
+end
+
+DrawLevelComplete = function()
+  screen.setDrawScale(1,1)
+  screen.drawMap("gamewon", -camera.x, -camera.y, mapWidth, mapHeight)
+end
+
+updateLevelComplete = function()
+  //if titleTimer < 600 then  // ~5 seconds at 60fps
+  //  titleTimer = titleTimer + 1
+  //end
+  if keyboard.ENTER or keyboard.SPACE or keyboard.ESCAPE or gamepad.A or gamepad.MENU or touch.touching then
+    print("Starting Level 1")
+    menuInputCooldown = 10
+
+    //SetupLevel1()
+    
+    gameState = "mainmenu"
+  end
+
+end
+
+DrawLevelCompleteUI = function()
+  screen.setDrawScale(1, 1)
+  screen.setFont("PixAntiqua")
+  if titleTimer < 300 then
+    screen.setLineWidth(1)
+    screen.drawText("Level Complete",0,25,16, "#FFF")
+    screen.drawText("Press Space or Enter",0,-25,11, "#FFF")
+    screen.setLineWidth(0.1)
+    screen.drawTextOutline("Level Complete",0,25,16, "#000")
+    screen.drawTextOutline("Press Space or Enter",0,-25,11, "#000")
+   
+  end
+
+end
+
+
+
+end()
+
+
+
+// file: missions.ms
+function()
+
+
+
+SetupLevel1=function()
+  print("Level 1:")
+  
+  
+  InitObjectives()
+  AddObjective("collect_carrots", 2, true, "Collect Carrots") // optional
+  //AddObjective("reach_exit", 1, true, "Reach Exit")             // mandatory
+  //AddObjective("time_limit", 60, false, "Complete within 1 min") // optional speed run
+
+  
+  GenerateWater(4433, 3, 5)
+  GenerateBushes(123,6,6)
+  InitCarrots(45, 10, 24) 
+  GenerateGrassBlades(3434, 50, 20)
+  GenerateNavPoints()
+  
+  
+  var bunny = new Bunny(0, 0)
+  player=bunny
+  camera = new Camera()
+  camera.follow(player)
+  
+  // Create a fox enemy that chases the player
+  var fox1 = new Fox(100, 58, player)
+  foes.push(fox1)
+
+
+  //fox1.ai.debugPath=true
+  print("=== Objectives after SetupLevel1 ===")
+  for o in objectives
+      print(o.type + " target=" + o.target + " label=" + o.label)
+  end
+
+end
+
+// --- Generation tuning variables ---
+// Water
+var WATER_SEED_MIN = 1000
+var WATER_SEED_MAX = 9999
+var WATER_COUNT_MIN = 4
+var WATER_COUNT_MAX = 8
+var WATER_RADIUS_MIN = 4
+var WATER_RADIUS_MAX = 8
+
+// Bushes
+var BUSH_SEED_MIN = 1000
+var BUSH_SEED_MAX = 9999
+var BUSH_COUNT_MIN = 6
+var BUSH_COUNT_MAX = 12
+var BUSH_MINDIST_MIN = 4
+var BUSH_MINDIST_MAX = 6
+
+// Carrots
+var CARROT_SEED_MIN = 1000
+var CARROT_SEED_MAX = 9999
+var CARROT_COUNT_MIN = 3
+var CARROT_COUNT_MAX = 12
+var CARROT_MINDIST_MIN = 25
+var CARROT_MINDIST_MAX = 100
+
+// Grass
+var GRASS_SEED_MIN = 1000
+var GRASS_SEED_MAX = 9999
+var GRASS_COUNT_MIN = 45
+var GRASS_COUNT_MAX = 70
+var GRASS_MINDIST_MIN = 10
+var GRASS_MINDIST_MAX = 20
+
+FindSafeSpawn = function(minDist, avoidList)
+    var attempts = 0
+    var maxAttempts = 200 // safety limit
+    var edgeBuffer = 32   // distance from edge in same units as map coords
+
+    while attempts < maxAttempts
+        attempts += 1
+
+        // random position in map space (origin at centre)
+        var sx = random.nextInt(mapWidth) - halfMapW
+        var sy = random.nextInt(mapHeight) - halfMapH
+
+        // skip if too close to map edges
+        if sx < -halfMapW + edgeBuffer then continue end
+        if sx >  halfMapW - edgeBuffer then continue end
+        if sy < -halfMapH + edgeBuffer then continue end
+        if sy >  halfMapH - edgeBuffer then continue end
+
+        // skip if on water or bush
+        if IsWater(sx, sy) then continue end
+        if IsBush(sx, sy) then continue end
+
+        // skip if too close to anything in avoidList
+        var tooClose = false
+        for a in avoidList
+            var dx = sx - a[0]
+            var dy = sy - a[1]
+            if dx*dx + dy*dy < minDist*minDist then
+                tooClose = true
+                break
+            end
+        end
+        if tooClose then continue end
+
+        // found a safe spot
+        return [sx, sy]
+    end
+
+    // fallback if no safe spot found
+    print("Warning: Could not find safe spawn after " + maxAttempts + " attempts")
+    return [0, 0]
+end
+
+GenCollectLevel=function()
+  print("Generating a Collect Level:")
+  
+
+ // Random seeds and counts
+  var waterSeed   = WATER_SEED_MIN   + random.nextInt(WATER_SEED_MAX - WATER_SEED_MIN + 1)
+  var waterCount  = WATER_COUNT_MIN  + random.nextInt(WATER_COUNT_MAX - WATER_COUNT_MIN + 1)
+  var waterRadius = WATER_RADIUS_MIN + random.nextInt(WATER_RADIUS_MAX - WATER_RADIUS_MIN + 1)
+
+  var bushSeed    = BUSH_SEED_MIN    + random.nextInt(BUSH_SEED_MAX - BUSH_SEED_MIN + 1)
+  var bushCount   = BUSH_COUNT_MIN   + random.nextInt(BUSH_COUNT_MAX - BUSH_COUNT_MIN + 1)
+  var bushMinDist = BUSH_MINDIST_MIN + random.nextInt(BUSH_MINDIST_MAX - BUSH_MINDIST_MIN + 1)
+
+  var carrotSeed    = CARROT_SEED_MIN    + random.nextInt(CARROT_SEED_MAX - CARROT_SEED_MIN + 1)
+  var carrotCount   = CARROT_COUNT_MIN   + random.nextInt(CARROT_COUNT_MAX - CARROT_COUNT_MIN + 1)
+  var carrotMinDist = CARROT_MINDIST_MIN + random.nextInt(CARROT_MINDIST_MAX - CARROT_MINDIST_MIN + 1)
+
+  var grassSeed    = GRASS_SEED_MIN    + random.nextInt(GRASS_SEED_MAX - GRASS_SEED_MIN + 1)
+  var grassCount   = GRASS_COUNT_MIN   + random.nextInt(GRASS_COUNT_MAX - GRASS_COUNT_MIN + 1)
+  var grassMinDist = GRASS_MINDIST_MIN + random.nextInt(GRASS_MINDIST_MAX - GRASS_MINDIST_MIN + 1)
+
+
+  // Debug print seeds/counts
+  print("Water seed=" + waterSeed + " count=" + waterCount + " radius=" + waterRadius)
+  print("Bush seed=" + bushSeed + " count=" + bushCount + " minDist=" + bushMinDist)
+  print("Carrot seed=" + carrotSeed + " count=" + carrotCount + " minDist=" + carrotMinDist)
+  print("Grass seed=" + grassSeed + " count=" + grassCount + " minDist=" + grassMinDist)
+
+  InitObjectives()
+  AddObjective("collect_carrots", carrotCount, true, "Collect Carrots") // Mndatory
+  AddObjective("collect_carrots", round(carrotCount/2), false, "Collect Some Carrots") //optional
+  //AddObjective("reach_exit", 1, true, "Reach Exit")             // mandatory
+  //AddObjective("time_limit", 60, false, "Complete within 1 min") // optional speed run
+
+  GenerateWater(waterSeed, waterCount, waterRadius)
+  GenerateBushes(bushSeed, bushCount, bushMinDist)
+  InitCarrots(carrotSeed, carrotCount, carrotMinDist)
+  GenerateGrassBlades(grassSeed, grassCount, grassMinDist)
+
+  GenerateNavPoints()
+  var tunnelPos = FindSafeSpawn(32, [])
+  tunnels.push(object x = tunnelPos[0] y = tunnelPos[1] covered = true uncoverTimer = 0 end)
+
+
+  
+  var bunnyPos = FindSafeSpawn(64, []) // no avoid list yet
+  var bunny = new Bunny(bunnyPos[0], bunnyPos[1])
+  //var bunny = new Bunny(0, 0)
+  player=bunny
+  camera = new Camera()
+  camera.follow(player)
+  
+  // Create a fox enemy that chases the player
+  var foxPos = FindSafeSpawn(64, [[bunnyPos[0], bunnyPos[1]]])
+  var fox1 = new Fox(foxPos[0], foxPos[1], player)
+  //var fox1 = new Fox(100, 58, player)
+  foes.push(fox1)
+
+
+  //fox1.ai.debugPath=true
+  print("=== Objectives after SetupLevel1 ===")
+  for o in objectives
+      print(o.type + " target=" + o.target + " label=" + o.label)
+  end
+
+end
+end()
+
+
+
+// file: objectives.ms
+function()
+var objectives = []
+
+InitObjectives = function()
+    objectives = [] // clear for new level
+end
+
+AddObjective = function(objType, target, mandatory, label)
+    var obj = new Object()
+    obj.objType = objType         // <-- renamed from 'type'
+    obj.target = target
+    obj.mandatory = mandatory
+    obj.label = label or objType
+    obj.progress = 0
+    obj.completed = false
+    obj.failed = false
+    objectives.push(obj)
+    print("DEBUG: Added objective '" + obj.label + "' mandatory=" + obj.mandatory)
+
+end
+
+UpdateObjectiveProgress = function(objType, amount)
+    var found = false
+    for o in objectives
+        if o.objType == objType then
+            found = true
+            var oldProgress = o.progress
+            o.progress += amount
+            print("[Objective Debug] " + o.label + " incremented from " + oldProgress + " to " + o.progress)
+            if o.progress >= o.target then
+                o.completed = true
+            end
+        end
+    end
+    if not found then
+        print("[Objective Debug] No objective found with type '" + objType + "'")
+    end
+end
+
+FailObjective = function(type)
+    for o in objectives
+        if o.type == type then
+            o.failed = true
+        end
+    end
+end
+
+UpdateObjectives = function()
+    var allMandatoryComplete = true
+
+    for o in objectives
+        // Debug: show current state of each objective
+        //print(
+        //    "[Objective Debug] " + o.label +
+        //    " | objType=" + o.objType +
+        //    " | progress=" + o.progress + "/" + o.target +
+        //    " | completed=" + o.completed +
+        //    " | failed=" + o.failed
+        //)
+
+        // Time limit check
+        if o.objType == "time_limit" and not o.completed then
+            if o.progress >= o.target then
+                o.failed = true
+                print("[Objective Debug] Time limit failed for: " + o.label)
+                if o.mandatory then
+                    print("[Objective Debug] Mandatory time limit failed — GAME OVER")
+                    gameState = "gameover"
+                    return
+                end
+            end
+        end
+
+        // Check mandatory completion
+        if o.mandatory and not o.completed then
+            allMandatoryComplete = false
+        end
+    end
+
+    if allMandatoryComplete then
+        print("[Objective Debug] All mandatory objectives complete — LEVEL COMPLETE")
+        gameState = "levelcomplete"
+    end
+end
+
+DrawObjectivesUI = function()
+    screen.setFont("PixAntiqua")
+    screen.setColor("#FFF")
+
+    // Sort so mandatory objectives come first
+    objectives.sortList(function(a, b)
+        if a.mandatory and not b.mandatory then return -1 end
+        if b.mandatory and not a.mandatory then return 1 end
+        return 0
+    end)
+
+    // Start from the top of the visible area
+    var margin = 10
+    var y = (viewH / 2) - margin  // top edge minus margin
+
+    for o in objectives
+        var status = o.completed and "✅" or (o.failed and "❌" or "")
+
+        var prefix = ""
+        if not o.mandatory then
+            prefix = "[optional] "
+        end
+
+        var label = o.label or o.objType
+        var text = prefix + label + ": " + o.progress + "/" + o.target + " " + status
+
+        // Left-align by shifting center point
+        var charWidth = 0.6 * 7
+        var textWidth = text.length * charWidth
+        var leftX = -viewW / 2 + margin + textWidth / 2
+        screen.setLineWidth(1.0)
+        screen.drawText(text, leftX, y, 7,, "#FFF")
+        screen.setLineWidth(0.1)
+        screen.drawTextOutline(text, leftX, y, 7,"#000")
+        // Move down for the next line
+        y -= 15
+    end
+end
+end()
+
+
+
+// file: playerinput.ms
+function()
+// --- Player input state ---
+inputMoveX = 0
+inputMoveY = 0
+inputFacing = -1 // -1 = right, 1 = left
+inputMoving = false
+
+// Optional: track taps vs holds
+inputTapUp = false
+inputTapDown = false
+inputTapLeft = false
+inputTapRight = false
+
+inputInteractPressed = false
+inputInteractTap = false
+
+var pauseCooldown = 0
+inputPausePressed = false
+inputPauseTap = false
+
+UpdatePlayerInput = function()
+  // Reset each frame
+  inputMoveX = 0
+  inputMoveY = 0
+  inputMoving = false
+
+  inputTapUp = false
+  inputTapDown = false
+  inputTapLeft = false
+  inputTapRight = false
+
+  var usingAnalog = false
+  
+  // --- Interact button (Space / Enter / Gamepad A) ---
+  //var interactNow = keyboard.SPACE or keyboard.ENTER or gamepad.A
+  var interactNow = keyboard.SPACE or keyboard.ENTER or gamepad.A or faceButtons.isPressed("interact")
+
+  inputInteractTap = interactNow and not inputInteractPressed
+  inputInteractPressed = interactNow
+ 
+  var pauseNow = keyboard.ESCAPE or gamepad.MENU
+
+  inputPauseTap = pauseNow and not inputPausePressed
+  inputPausePressed = pauseNow
+  // --- Virtual Joystick (mobile) ---
+  if abs(moveStick.xValue) > 5 or abs(moveStick.yValue) > 5 then
+      inputMoveX = moveStick.xValue / 100   // convert from -100..100 to -1..1
+      inputMoveY = moveStick.yValue / 100
+      inputMoving = true
+      inputFacing = (inputMoveX < 0) and 1 or -1
+      usingAnalog = true
+  end
+  // --- Analog Stick Input via angle + amount ---
+  var angleDeg = gamepad.LEFT_STICK_ANGLE
+  var amount = gamepad.LEFT_STICK_AMOUNT
+
+  if amount > 0.2 then
+    var angleRad = angleDeg * (PI / 180)
+    inputMoveX = cos(angleRad) * amount
+    inputMoveY = sin(angleRad) * amount
+    inputMoving = true
+    inputFacing = (inputMoveX < 0) and 1 or -1
+    usingAnalog = true
+  end
+
+  // --- Fallback to Keyboard + D-pad ---
+  if not usingAnalog then
+    if keyboard.UP or gamepad.UP then
+      inputTapUp = true
+      inputMoveY = 1
+      inputMoving = true
+    end
+    if keyboard.DOWN or gamepad.DOWN then
+      inputTapDown = true
+      inputMoveY = -1
+      inputMoving = true
+    end
+    if keyboard.LEFT or gamepad.LEFT then
+      inputTapLeft = true
+      inputMoveX = -1
+      inputMoving = true
+      inputFacing = 1
+    end
+    if keyboard.RIGHT or gamepad.RIGHT then
+      inputTapRight = true
+      inputMoveX = 1
+      inputMoving = true
+      inputFacing = -1
+    end
+
+    // Normalize keyboard/D-pad diagonals
+    if inputMoveX != 0 and inputMoveY != 0 then
+      inputMoveX *= 0.7071
+      inputMoveY *= 0.7071
+    end
+  else
+    // Clamp analog vector to prevent diagonal speed boost
+    var len = sqrt(inputMoveX * inputMoveX + inputMoveY * inputMoveY)
+    if len > 1 then
+      inputMoveX /= len
+      inputMoveY /= len
+    end
+  end
+  
+end
+end()
+
+
+
+// file: ui.ms
+function()
+DrawUI = function()
+  screen.setDrawScale(1, 1)
+  screen.setFont("PixAntiqua")
+
+  screen.setLineWidth(1)
+  screen.setColor("#FFF")
+  
+  
+  //screen.drawRect(0, 0, 300, 200, [255, 0, 0])// Map boundary
+  //screen.drawRect(-halfMapW - camera.x,-halfMapH - camera.y,mapWidth,mapHeight,[255, 0, 0])
+  screen.drawRect(0 - camera.x, 0 - camera.y, mapWidth, mapHeight, [255, 0, 0])
+  
+  //screen.drawText("Player: " + round(playerx) + "," + round(playery), -110, -90,11)
+  //screen.drawText("Score: " + GameScore , -120, 90,11)
+end
+
+
+end()
+
+
+
+// file: virtualbutton.ms
+function()
+VirtualButton = class
+  constructor = function(x, y, radius, label, color, actionName)
+      this.x = x
+      this.y = y
+      this.radius = radius
+      this.label = label
+      this.color = color
+      this.actionName = actionName // e.g. "interact", "pause", "jump"
+      this.visible = true
+      this.pressed = false
+  end
+  
+  update = function()
+      if not this.visible then
+          this.pressed = false
+          return
+      end
+  
+      this.pressed = false
+      if touch.touching then
+          for t in touch.touches
+              var dx = t.x - this.x
+              var dy = t.y - this.y
+              if sqrt(dx*dx + dy*dy) <= this.radius then
+                  this.pressed = true
+              end
+          end
+      end
+  end
+  
+  draw = function()
+      if not this.visible then return end
+  
+      // Outer circle
+      screen.setAlpha(0.4)
+      screen.setColor(this.pressed and "#FF0" or this.color)
+      screen.fillRound(this.x, this.y, this.radius*2, this.radius*2, this.color)
+      screen.setAlpha(1.0)
+  
+      // Label
+      screen.setColor("#000")
+      screen.drawText(this.label, this.x, this.y, 8)
+  end
+end
+
+VirtualGamepad = class
+  constructor = function(centerX, centerY, spacing)
+    this.buttons = []
+  
+    // Xbox layout: Y on top, A bottom, X left, B right
+    // Xbox layout: Y on top, A bottom, X left, B right
+    //this.buttons.push(new VirtualButton(centerX, centerY - spacing, 15, "A", "#0F0", "interact"))
+    //this.buttons.push(new VirtualButton(centerX, centerY + spacing, 15, "Y", "#FF0", "special"))
+    //this.buttons.push(new VirtualButton(centerX - spacing, centerY, 15, "X", "#00F", "alt"))
+    //this.buttons.push(new VirtualButton(centerX + spacing, centerY, 15, "B", "#F00", "cancel"))
+    
+    this.buttons.push(new VirtualButton(centerX, centerY - spacing, 20, "Interact", "#0F0", "interact"))
+    //this.buttons.push(new VirtualButton(centerX, centerY + spacing, 15, "Y", "#FF0", "special"))
+    //this.buttons.push(new VirtualButton(centerX - spacing, centerY, 15, "X", "#00F", "alt"))
+    //this.buttons.push(new VirtualButton(centerX + spacing, centerY, 15, "B", "#F00", "cancel"))
+  end
+  
+  setVisible = function(name, visible)
+      for b in this.buttons
+          if b.actionName == name then
+              b.visible = visible
+          end
+      end
+  end
+  
+  update = function()
+      for b in this.buttons
+          b.update()
+      end
+  end
+  
+  draw = function()
+      for b in this.buttons
+          b.draw()
+      end
+  end
+  
+  isPressed = function(name)
+      for b in this.buttons
+          if b.actionName == name then
+              return b.pressed
+          end
+      end
+      return false
+  end
+end
+end()
+
+
+
+// file: virtualjoystick.ms
+function()
+Joystick = class
+  
+  constructor = function(x, y, d1, d2, color1, color2)
+    this.x1 = x
+    this.y1 = y
+    
+    this.x2 = x
+    this.y2 = y
+    
+    this.d1 = d1
+    this.d2 = d2
+    
+    this.color1 = color1
+    this.color2 = color2
+    
+    this.xValue = 0
+    this.yValue = 0
+    
+    this.active = false
+  end
+  
+  update = function()
+    if touch.touching then
+      if distance(touch.x, touch.y, x1, y1) <= d1/2 or active == true then
+        active = true
+        if distance(x1, y1, touch.x, touch.y) < d1/2 then
+          x2 = touch.x
+          y2 = touch.y
+        else
+          x2 = cosd(atan2d(touch.y - y1, touch.x - x1))*(d1/2) + x1
+          y2 = sind(atan2d(touch.y - y1, touch.x - x1))*(d1/2) + y1
+        end
+      else
+        x2 = x1
+        y2 = y1
+      end
+    else
+      active = false
+    end
+    
+    if active == false then
+      x2 = x1
+      y2 = y1
+    end
+    
+    xValue = (x2 - x1)/(d1/2)*100
+    yValue = (y2 - y1)/(d1/2)*100
+  end
+  
+  draw = function()
+    screen.drawRound(x1, y1, d1, d1, color1)
+    screen.fillRound(x2, y2, d2, d2, color2)
+  end
+  
+  distance = function(x_1, y_1, x_2, y_2)
+    local dx = x_2 - x_1
+    local dy = y_2 - y_1
+    local distance = sqrt(pow(dx, 2) + pow(dy, 2))
+    return distance
+  end
+end
+
+end()
+
+
+</script></html>
