@@ -1455,16 +1455,35 @@ ResetGame = function()
 end
 
 init = function()
+  viewW = screen.width
+  viewH = screen.height
+
   print("Init")
   gameState="mainmenu"
   //DrawMainMenu()
+  //actionStick = new Joystick(viewW/2 - 60, -viewH/2 + 60, 60, 15, "rgb(255,0,0)", "rgb(0,0,255)")
   
-   // Create joysticks
-  moveStick = new Joystick(viewW/2 - 125, -viewH/2 + 50, 80, 20, "rgb(255,255,255)", "rgb(0,255,0)")
-  actionStick = new Joystick(viewW/2 - 60, -viewH/2 + 60, 60, 15, "rgb(255,0,0)", "rgb(0,0,255)")
-  faceButtons = new VirtualGamepad(viewW  +115, -viewH/2 + 60, 30)
+   // Create virtual joysticks + gamepad
+  //moveStick = new Joystick(viewW/2 - 125, -viewH/2 + 50, 80, 20, "rgb(255,255,255)", "rgb(0,255,0)")
+  
+  //faceButtons = new VirtualGamepad(viewW  +115, -viewH/2 + 60, 30)
+  //print("Created virtual controller")
+  var joypadding = 5  // distance from screen edge
+  var gamepadpadding = 25
+  // --- Bottom-left joystick ---
+  var moveX = (-viewW / 2) + joypadding + 40   // 40 = half of joystick outer diameter
+  var moveY = (-viewH / 2) + joypadding + 40
+  moveStick = new Joystick(moveX, moveY, 80, 20, "rgb(255,255,255)", "rgb(0,255,0)")
+
+  // --- Bottom-right face buttons ---
+  var spacing = 30   // distance from cluster centre to each button
+  var radius  = 15   // button radius
+  var padCenterX = (viewW / 2) - gamepadpadding - spacing
+  var padCenterY = (-viewH / 2) + gamepadpadding + spacing
+  faceButtons = new VirtualGamepad(padCenterX, padCenterY, spacing, radius)
+
   print("Created virtual controller")
-  
+
 end
 
 changeState = function(newState)
@@ -1509,13 +1528,26 @@ update = function()
       onStateEnter(gameState, prevGameState)
       prevGameState = gameState
   end
-  
+  system.javascript("""
+    this.goFullscreenAndLock = function() {
+        let elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen().then(function() {
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape').catch(function(err) {
+                        console.log('Orientation lock failed:', err);
+                    });
+                }
+            });
+        }
+    }
+""")
   viewW = screen.width//482 //300
   viewH = screen.height///200//200
   moveStick.update()
   
   faceButtons.update()
-  actionStick.update()
+  //actionStick.update()
   UpdatePlayerInput()
   
   handlePause()
